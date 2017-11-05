@@ -29,12 +29,12 @@ test:
 	ls -l
 	oommf +version
 
-	$(PYTHON) -c "import oommfodt as m; m.test()"
-	$(PYTHON) -c "import joommfutil as m; m.test()"
-	$(PYTHON) -c "import discretisedfield as d; import sys; sys.exit(d.test())"
-	$(PYTHON) -c "import micromagneticmodel as m; m.test()"
-	$(PYTHON) -c "import oommfc as m; m.test()"
-	$(PYTHON) -c "import joommf"
+	$(PYTHON) -c "import sys; import oommfodt as m; sys.exit(m.test())"
+	$(PYTHON) -c "import sys; import joommfutil as m; sys.exit(m.test())"
+	$(PYTHON) -c "import sys; import discretisedfield as d; import sys; sys.exit(d.test())"
+	$(PYTHON) -c "import sys; import micromagneticmodel as m; sys.exit(m.test())"
+	$(PYTHON) -c "import sys; import oommfc as m; sys.exit(m.test())"
+	$(PYTHON) -c "import sys; import joommf"
 
 
 travis-build:
