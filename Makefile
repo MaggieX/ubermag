@@ -1,6 +1,17 @@
 PYTHON?=python3
 
+
+# install joommf via pip
+build-docker-pip:
+	docker build -t joommfimage-pip -f Dockerfile .
+
+# install joommf via conda
+build-docker-conda:
+	docker build -t joommfimage-conda -f Dockerfile-conda .
+
 build-docker:
+	make build-docker-pip
+	make build-docker-conda
 
 # push-docker: build-docker
 # 	docker push joommf/joommf
@@ -28,9 +39,5 @@ test:
 
 travis-build:
 	make build-docker
-	docker run -e ci_env -ti -d --name testcontainer joommftestimage
-	docker exec testcontainer make test
-	docker exec testcontainer pwd
-	docker exec testcontainer ls -l
-	docker stop testcontainer
-	docker rm testcontainer
+	docker run --rm -e ci_env joommfimage-pip make test
+	docker run --rm -e ci_env joommfimage-conda make test

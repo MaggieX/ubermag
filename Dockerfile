@@ -14,6 +14,7 @@ RUN apt install -y apt-transport-https ca-certificates \
 #
 # RUN conda install -c conda-forge oommf
 
+RUN date
 # install joommf via pip
 RUN python3 -m pip install --upgrade pip joommf
 
