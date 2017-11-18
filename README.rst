@@ -10,6 +10,13 @@ Horizon 2020 European Research Infrastructure project
 This repository is also used as a meta-repository for JOOMMF project
 related issues.
 
+The build status refers to building JOOMMF on Linux using PIP.
+
+.. image:: https://travis-ci.org/joommf/joommf.svg?branch=towards-test-function
+    :target: https://travis-ci.org/joommf/joommf
+    
+
+
 .. _JOOMMF:
   http://joommf.github.io
 
